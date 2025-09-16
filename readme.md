@@ -1,17 +1,23 @@
 📌 Deskripsi
-Service backend untuk mengatur Role Based Access Control (RBAC), menentukan hak akses user seperti admin, member, viewer.
+
+Service backend untuk mengatur autentikasi user (register, login, refresh token, logout).
 
 ⚙️ Tech Stack
-Laravel 10
+
+Java Quarkus
 
 🔗 Integrasi
-- Digunakan oleh fe-rbac-mm.
-- Terhubung dengan be-auth-mm untuk mengaitkan user dengan role.
+
+Digunakan oleh fe-host-mm.
+
+Berhubungan erat dengan be-rbac-mm untuk mapping user ↔ role.
 
 📝 Catatan
-- Semua endpoint harus dilindungi middleware auth.
-- Role dikelola terpusat agar konsisten di seluruh aplikasi.
+
+Gunakan JWT untuk authentication.
+
+Refresh token harus disimpan dengan aman.
 
 🏗 Arsitektur
-Microservices: independen, expose REST API.
-Bisa diakses service lain melalui API Gateway.
+
+Microservices: expose REST API.
